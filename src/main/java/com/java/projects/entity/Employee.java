@@ -11,6 +11,18 @@ import java.util.List;
 @Table(name = "Employee")
 public class Employee {
 
+    public Employee(int emp_id, String firstname, String lastName, @NonNull String email, List<Integer> phoneNumber, Date DOJ, int salary, double tax_amount, double cess_amount) {
+        this.emp_id = emp_id;
+        this.firstname = firstname;
+        LastName = lastName;
+        Email = email;
+        PhoneNumber = phoneNumber;
+        this.DOJ = DOJ;
+        Salary = salary;
+        this.tax_amount = tax_amount;
+        this.cess_amount = cess_amount;
+    }
+
     @Id
     @GeneratedValue
     private int emp_id;
@@ -116,4 +128,18 @@ public class Employee {
         this.cess_amount = cess_amount;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "emp_id=" + emp_id +
+                ", firstname='" + firstname + '\'' +
+                ", LastName='" + LastName + '\'' +
+                ", Email='" + Email + '\'' +
+                ", PhoneNumber=" + PhoneNumber +
+                ", DOJ=" + DOJ +
+                ", Salary=" + Salary +
+                ", tax_amount=" + tax_amount +
+                ", cess_amount=" + cess_amount +
+                '}';
+    }
 }
